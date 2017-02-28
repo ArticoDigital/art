@@ -1,0 +1,36 @@
+body
+  overflow: hidden
+#preloader
+  width: 100vw
+  height: 100vh
+  background: rgba(black, .85)
+  position: fixed
+  z-index: 1000
+  left: 0
+  top: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  transition: top .5s ease
+  .image
+    width: 90%
+    max-width: 300px
+  &.hide
+    top: -120%
+  #signal-1,
+  #signal-2,
+  #signal-3
+    fill: #EFA43A
+    opacity: .9
+    animation: preloader 1.5s infinite
+
+  #signal-1
+    animation-delay: .7s
+  #signal-2
+    animation-delay: .35s
+
+@keyframes preloader
+  50%
+    fill: #EFA43A
+  100%
+    fill: white

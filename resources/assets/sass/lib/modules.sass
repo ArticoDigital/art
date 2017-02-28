@@ -1,0 +1,407 @@
+@import "alerts"
+
+.Container
+  margin: auto
+  width: 100%
+  max-width: rem(1170)
+  padding: 0 rem(30)
+
+.Logo
+  padding: rem(16) 0
+  margin: 0
+  max-width: rem(115)
+
+.icon
+  display: flex
+  justify-content: center
+  align-items: center
+  width: rem(26)
+  height: rem(26)
+  margin-bottom: rem(25)
+  a
+    display: block
+    height: 100%
+
+.Menu li
+  padding-right: rem(15)
+  @include respond-to (medium)
+   padding-right: rem(45)
+
+.Menu-fixed
+  nav
+    display: none
+    background: rgba(0,79,143,.95)
+    width: 100vw
+    height: 100vh
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 500
+  &.gray
+    nav
+      background: rgba(76, 76, 76, 0.95)
+
+  ul
+    margin: auto
+    height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  li
+    width: 100%
+    text-transform: uppercase
+    
+   
+    a
+      border-bottom: 1px solid white
+      display: block
+      text-align: center
+      font-size: 1.2rem
+      padding: 15px 0 5px
+      color: $white
+
+      &:hover
+        border-color: $yellow
+        color: $yellow
+    
+.menu-item-out
+  display: block !important
+  @include respond-to (medium)
+    display: none !important
+.menu-item-out-movile
+  display: none !important
+  @include respond-to (medium)
+    display: block !important
+.menu-item-out-tablet
+  display: none !important
+  @include respond-to (large)
+    display: block !important
+
+
+.Hamburguer, .Hamburguer2
+  display: block
+  position: relative
+  width: rem(33) !important
+  height: rem(23) !important
+  span,
+  span:after
+    display: block
+    height: rem(5)
+    background: white
+
+  span
+    transition: all .3s ease
+    position: absolute
+    right: 0
+    width: rem(25)
+    &:after
+      content: ""
+      width: rem(5)
+      position: absolute
+      left: -7px
+    &:nth-child(2)
+      top: 50%
+      margin-top: rem(-2.5)
+    &:nth-child(3)
+      bottom: 0
+
+  &.open
+    position: relative
+    margin-right: 5px
+    z-index: 600
+    width: rem(33)
+    span
+      top: 50%
+      margin-top: rem(-2.5)
+      width: 100%
+      &:after
+        display: none
+      &:nth-child(1)
+        transform: rotate(-45deg)
+      &:nth-child(2)
+        opacity: 0
+      &:nth-child(3)
+        transform: rotate(45deg)
+
+.show
+  display: block !important
+
+.no-padding
+  padding: 0
+
+.Form, .Form2
+  width: 100%
+  margin: auto
+  label
+    padding: rem(5) rem(15)
+  input[type='text'],
+  input[type='number']
+    width: 100%
+    height: rem(35)
+  textarea
+    width: 100%
+    scallable: false
+    height: rem(200)
+    padding: rem(10) !important
+
+.Form
+  input[type='text'],
+  input[type='number']
+    padding: 0 rem(37)
+    font-size: .97rem
+    text-align: center
+    box-sizing: border-box
+    height: rem(42)
+
+.Form2
+  font-size: 1.2rem
+  label
+    &.required .text:after
+      content: " * "
+      color: $light-blue
+    span.text
+      display: inline-block
+      padding: rem(10) 0
+  input[type='text'],
+  input[type='number'],
+  textarea
+    outline-color: $light-blue
+    background: $gray
+    border: none
+    padding: 0 rem(10)
+
+  input[type='number']
+    text-align: center
+
+.Form .Form-Control
+  position: relative
+  .name
+    font-size: .97rem
+    position: absolute
+    color: #AAA
+    width: calc(100% - 30px)
+    height: 40px
+    text-align: center
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-right: 26px
+    background: white
+
+  .icon
+    position: absolute
+    z-index: 2
+    left: 15px
+    top: 50%
+    margin-top: -15px !important
+    color: black
+    width: 40px !important
+    padding: 0 10px !important
+  .placeholder
+    position: absolute
+    z-index: 2
+    top: 5px
+    left: 15px
+    display: flex
+    align-items: center
+    color: black
+    height: 40px
+    text-align: center
+
+.Button
+  width: rem(260)
+  height: rem(40)
+  background: $light-blue
+  color: $white
+  border: none
+  outline: none
+  text-transform: uppercase
+  font-size: 1.1rem
+  font-weight: 200
+  cursor: pointer
+  margin: 15px 0px 0px 0px
+  @include respond-to (medium)
+    margin: 55px 0
+  &.small
+    width: auto
+    height: auto
+    border-radius: 5px
+    padding: 3px 15px
+    font-weight: 400
+  &.yellow
+    background: $yellow
+  &.right
+    float: right
+  &.disabled
+    background: gray
+    opacity: .5
+    cursor: default
+
+.DropFiles
+  width: 100%
+  background: $gray
+  display: flex
+  justify-content: center
+  align-items: center
+  .DropFiles-inside
+    position: relative
+    padding: 10px
+    text-align: center
+    color: gray
+    cursor: pointer
+    width: 100%
+    height: calc(100% - 40px)
+    margin: 20px
+    border: dashed 3px gray
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    span
+      line-height: 30px
+    .rectangle
+      background: white
+      border: 1px solid #C3C3C3
+      padding: 5px 10px
+      display: inline-block
+      margin-top: 10px
+      border-radius: 5px
+    &.Drag
+      color: $light-blue
+      border-color: $light-blue
+      svg g
+        fill: $light-blue
+    #files, .drop-files-input 
+      cursor: pointer !important
+      opacity: 0
+      position: absolute
+      top: 0
+      left: 0
+      background: red
+      display: block
+      width: 100%
+      height: 100%
+
+.FilesPreview
+  overflow: hidden
+  .File
+    padding: 10px
+    margin: 20px 20px 0 0
+    height: 100px
+    float: left
+    cursor: move
+    border: 1px dotted gray
+    background-color: $white
+
+    &:last-child
+      margin-right: 0
+    img
+      height: 100%
+      width: auto
+
+.DropFilesSmall
+  width: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding: 0 10px
+  margin: 15px 0
+
+  .DropFiles-inside
+    position: relative
+    padding: 5px
+    text-align: left
+    color: gray
+    cursor: pointer
+    width: 100%
+    height: calc(100% - 40px)
+    border: dashed 2px gray
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: initial
+    min-height: 50px
+    span
+      line-height: 30px
+      padding: 5px
+    .rectangle
+      background: #054CCF
+      color: white
+      border: 1px solid #C3C3C3
+      padding: 3px 10px
+      display: inline-block
+      text-align: center
+      border-radius: 5px
+      min-height: 70px
+      min-width: 100px
+    &.Drag
+      color: $light-blue
+      border-color: $light-blue
+      svg g
+        fill: $light-blue
+    &.active
+      border: dashed 2px green
+      .rectangle
+        background-color: green
+
+    #files, .drop-files-input 
+      cursor: pointer !important
+      opacity: 0
+      position: absolute
+      top: 0
+      left: 0
+      background: red
+      display: block
+      width: 100%
+      height: 100%
+
+#boton-enviar
+    border: none
+    background: url(/img/boton-enviar.jpg) no-repeat
+    width: 154px
+    height: 73px
+    cursor: pointer
+
+.Video
+  display: none
+  div.Video-child
+    width: 100%
+    position: relative
+    & .play, & .stop
+      display: flex
+      justify-content: center
+      align-items: center
+      cursor: pointer
+      background: rgba(0,0,0,.8)
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      img
+        width: rem(70)
+
+svg.blue g
+  fill: $light-blue
+
+#Flex
+  display: flex !important
+
+.bounce
+  animation: bounce 3s infinite
+
+@keyframes bounce
+  0%, 20%, 50%, 80%, 100%
+    transform: translateY(0) rotate(90deg)
+  40%
+    transform: translateY(rem(-20)) rotate(90deg)
+  60%
+    transform: translateY(rem(-10)) rotate(90deg)
+  90%
+    animation-play-state: paused
+  100%
+    animation-play-state: running
+
+#PayForm
+  overflow-y: scroll

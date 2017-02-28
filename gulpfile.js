@@ -13,7 +13,24 @@ require('laravel-elixir-vue-2');
  |
  */
 
-elixir(mix => {
+elixir.config.css.autoprefix = {
+    enabled: true,
+    options: {
+        cascade: true,
+        browsers: ['last 2 versions', 'safari >= 4', 'ie >= 8', 'opera >= 12', 'ios >= 6', 'android >= 4']
+    }
+};
+
+
+/*elixir(mix => {
     mix.sass('app.scss')
        .webpack('app.js');
+});*/
+
+
+
+
+elixir(function(mix) {
+    mix.sass('mainFront.sass', 'public/css/front/style.css');
+    
 });

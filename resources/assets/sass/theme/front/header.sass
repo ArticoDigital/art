@@ -1,0 +1,228 @@
+.Header
+  margin: auto
+  min-height: 100vh
+  display: flex
+  //overflow: hidden
+  flex-direction: column
+  justify-content: space-between
+  a, q
+    color: $white
+  q:before,
+  q:after
+    visibility: hidden
+
+  .BarNav
+    min-height: rem(100)
+
+  .icon
+    margin: 0
+    padding-right: rem(20)
+    img
+      height: 100%
+
+  .Services
+    padding-bottom: rem(38)
+    color: $white
+
+    .Images, .Leyend
+      text-align: center
+      padding: rem(50)
+
+    .Leyend
+      font-size: 1.5rem
+
+    .Service-image
+      text-align: center
+      width: rem(150)
+
+    .Arrow
+      transform: rotate(90deg)
+      width: rem(25)
+      height: rem(25)
+      font-weight: 800
+      margin: auto
+.home .backgroundVideo
+  background: url("../../img/bogota-6.jpg") center no-repeat
+  background-size: cover
+
+.Header_auth
+  margin: auto
+  min-height: auto !important
+  display: flex
+  //overflow: hidden
+  flex-direction: column
+  justify-content: space-between
+  a, q
+    color: $white
+  q:before,
+  q:after
+    visibility: hidden
+
+  .BarNav
+    min-height: rem(100)
+
+  .icon
+    margin: 0
+    padding-right: rem(20)
+    img
+      height: 100%
+
+  .Services
+    padding-bottom: rem(38)
+    color: $white
+
+    .Images, .Leyend
+      text-align: center
+      padding: rem(50)
+
+    .Leyend
+      font-size: 1.5rem
+
+    .Service-image
+      text-align: center
+      width: rem(150)
+
+    .Arrow
+      transform: rotate(90deg)
+      width: rem(25)
+      height: rem(25)
+      font-weight: 800
+      margin: auto
+   
+
+.backgroundVideo
+  overflow: hidden
+  background: $black
+  width: 100%
+  position: absolute
+  z-index: -1
+  left: 0
+  top: 0
+  height: 100%
+  .cover
+    opacity: .4
+    display: block
+    width: auto
+    min-width: 100%
+    height: auto
+    min-height: 100%
+
+/************** GIRAR IMAGEN ***************/
+
+.Images
+  position: relative
+  display: flex
+  width: 100%
+  -webkit-perspective: 1000
+  perspective: 1000
+  margin: 0 auto
+  padding-bottom: 2.375rem
+  color: #fff
+  @include respond-to (medium)
+   width: 600px  
+
+  .Service-image
+    width: 120px
+    margin: 0
+    text-align: center
+    @include respond-to (medium)
+      width: 150px
+
+  a
+    position: relative
+    @include respond-to (medium)
+     &:hover
+      .circle
+        -webkit-transform: rotate3d(0, 45, 0, 180deg)
+        transform: rotate3d(0, 45, 0, 180deg)
+      .front
+        transform: rotateY(45deg)
+        z-index: 0
+
+.circle
+  -webkit-transition: 0.5s
+  transition: 0.5s
+
+  -webkit-transform-style: preserve-3d
+  transform-style: preserve-3d
+
+  -webkit-transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860)
+  transition-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860)
+
+  height: 140px
+  @include respond-to (medium)
+    height: 170px
+
+  .front, .back
+    transition: 0.5s
+    width: 120px
+    height: 120px
+    border-radius: 50%
+    -webkit-backface-visibility: hidden
+    -moz-backface-visibility: hidden
+    backface-visibility: hidden
+    position: absolute
+    top: 0
+    left: 0
+    @include respond-to (medium)
+      width: 150px
+      height: 150px
+  .back
+    position: relative
+    -webkit-transform: rotate3d(0,45,0,180deg)
+    -moz-transform: rotate3d(0,45,0,180deg)
+    -o-transform: rotate3d(0,45,0,180deg)
+    transform: rotate3d(0,45,0,180deg)
+
+    img
+      opacity: .8
+    span
+      padding: rem(35) rem(15)
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      align-items: center
+      display: none
+      @include respond-to (medium)
+        display: block;
+      svg path
+        fill : black
+
+  .front
+    z-index: 2
+
+.arrow
+  position: absolute
+  top: 30%
+  margin-top: -1.8rem
+  @include respond-to (large)
+    top: 50%
+  .Service-image
+    width: 2.5rem !important
+    opacity: .7
+    &:hover
+      opacity: 1
+    @include respond-to (medium)
+      width: 3.5rem !important
+  &.right
+    right: 0
+  &.left
+    left: 0
+
+
+#titulohome
+  text-align: center
+  margin: -20px auto 10px
+  font-size: 1.9em
+  @include respond-to (medium)
+    text-align: center
+    margin: 0px auto 20px
+    font-size: 2.3em
+  @include respond-to (large)
+    text-align: center
+    margin: 20px auto
+    font-size: 2.3em
